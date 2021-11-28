@@ -1,0 +1,9 @@
+const express =require('express'); // importing express....
+const bodyParser= require('body-parser');//importing body parser
+const app =express();            // with the app i can now access alll the http methods like get post ......
+
+const postsRoutes=require('./routes/posts');
+app.use(bodyParser.json());
+
+app.use("/posts",postsRoutes);
+module.exports = app; // we need to export the app so that other modules can use this page....       
